@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Animation Creator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>🎞️ Create Your Own Animation!</h1>
+
+    <div class="toolbar">
+      <button id="prevFrame">⬅️ Prev Frame</button>
+      <button id="nextFrame">➡️ Next Frame</button>
+      <button id="playBtn">▶️ Play</button>
+      <button id="clearBtn">🧹 Clear Frame</button>
+      <button id="saveBtn">💾 Save Frame</button>
+      <label>Brush color: <input type="color" id="colorPicker" value="#0000ff"></label>
+    </div>
+
+    <canvas id="myCanvas" width="500" height="400"></canvas>
+
+    <p id="frameInfo">Frame: 1</p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
