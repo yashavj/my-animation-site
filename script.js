@@ -93,3 +93,65 @@ function playAnimation() {
     }
   }, 200); // speed: 200ms per frame
 }
+// Mobile touch events
+canvas.addEventListener("touchstart", (e) => {
+  e.preventDefault(); // Prevent scrolling
+  drawing = true;
+  let touch = e.touches[0];
+  let rect = canvas.getBoundingClientRect();
+  x = touch.clientX - rect.left;
+  y = touch.clientY - rect.top;
+});
+
+canvas.addEventListener("touchmove", (e) => {
+  e.preventDefault();
+  if (!drawing) return;
+  let touch = e.touches[0];
+  let rect = canvas.getBoundingClientRect();
+  let newX = touch.clientX - rect.left;
+  let newY = touch.clientY - rect.top;
+
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(newX, newY);
+  ctx.strokeStyle = colorPicker.value;
+  ctx.lineWidth = 3;
+  ctx.stroke();
+
+  x = newX;
+  y = newY;
+  saveCurrentFrame();
+});
+
+canvas.addEventListener("touchend", () => (drawing = false));
+// Mobile touch events
+canvas.addEventListener("touchstart", (e) => {
+  e.preventDefault(); // Prevent scrolling
+  drawing = true;
+  let touch = e.touches[0];
+  let rect = canvas.getBoundingClientRect();
+  x = touch.clientX - rect.left;
+  y = touch.clientY - rect.top;
+});
+
+canvas.addEventListener("touchmove", (e) => {
+  e.preventDefault();
+  if (!drawing) return;
+  let touch = e.touches[0];
+  let rect = canvas.getBoundingClientRect();
+  let newX = touch.clientX - rect.left;
+  let newY = touch.clientY - rect.top;
+
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(newX, newY);
+  ctx.strokeStyle = colorPicker.value;
+  ctx.lineWidth = 3;
+  ctx.stroke();
+
+  x = newX;
+  y = newY;
+  saveCurrentFrame();
+});
+
+canvas.addEventListener("touchend", () => (drawing = false));
