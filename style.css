@@ -35,3 +35,9 @@ button:hover {
   font-weight: bold;
   margin-top: 10px;
 }
+button {
+  margin: 5px;
+  padding: 12px 20px; /* bigger for mobile */
+  font-size: 16px;
+  border-radius: 8px;
+}
